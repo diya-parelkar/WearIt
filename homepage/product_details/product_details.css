@@ -69,6 +69,16 @@ strong {
     align-items: center; /* Center circles vertically */
 }
 
+.color-swatch.selected {
+    border: 3px solid #000;
+}
+
+
+.size-circle.selected {
+    background-color: #7ad3c9;
+    color: #000000;
+}
+
 .size-circle {
     width: 50px; /* Size of the circle */
     height: 50px; /* Size of the circle */
@@ -77,10 +87,11 @@ strong {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: white; /* Text color */
+    color: rgb(0, 0, 0);
     cursor: pointer;
     transition: background-color 0.3s; /* Smooth color transition on hover */
-    background-color: #00796b; /* Default color */
+    background-color: #ffffff; /* Default color */
+    border: 1px black solid;
 }
 
 /* Hover effect for size circles */
@@ -138,4 +149,21 @@ strong {
 
 .color-swatch:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.add-to-wishlist {
+    margin-top: 30px;
+    padding: 16px 50px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: large;
+    margin-left: 10px; /* Space between buttons */
+}
+
+.add-to-wishlist:hover {
+    background-color: #ffc2c2;
 }

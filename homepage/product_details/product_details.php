@@ -1,5 +1,6 @@
 <?php
-// Database connection
+session_start(); // Start session for cart and wishlist
+
 $servername = "localhost:3307";
 $username = "root";
 $password = "";
@@ -37,7 +38,11 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     exit();
 }
 
-// Close the database connection
+// Initialize cart and wishlist in session if not set
+if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
+if (!isset($_SESSION['wishlist'])) $_SESSION['wishlist'] = [];
+
+
 $conn->close();
 ?>
 
@@ -49,7 +54,6 @@ $conn->close();
     <title><?php echo htmlspecialchars($product['description']); ?></title>
     <link rel="stylesheet" href="product_details.css">
     <link rel="stylesheet" href="../../Navbar/navbar.css?v=<?php echo time(); ?>">
-
 </head>
 <body>
     <?php include '../../Navbar/navbar.php'; ?>
@@ -59,7 +63,7 @@ $conn->close();
                 <img src="../../Seller/Images/<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['description']); ?>">
             </div>
             <div class="product-info">
-                <p class = 'title'><?php echo htmlspecialchars($product['description']); ?></p>
+                <p class='title'><?php echo htmlspecialchars($product['description']); ?></p>
                 <h3 class="product-price">Price: <span>₹<?php echo htmlspecialchars($product['price']); ?></span></h3>
                 <p class="seller-name"><strong>Seller:</strong> <?php echo htmlspecialchars($product['seller_name']); ?></p>
 
@@ -74,7 +78,7 @@ $conn->close();
                         // Check if json_decode was successful
                         if (json_last_error() === JSON_ERROR_NONE && is_array($colors)) {
                             foreach ($colors as $color) {
-                                echo "<span class='color-swatch' style='background-color: " . htmlspecialchars(trim($color)) . ";' title='" . htmlspecialchars(trim($color)) . "'></span>";
+                                echo "<span class='color-swatch' style='background-color: " . htmlspecialchars(trim($color)) . ";' title='" . htmlspecialchars(trim($color)) . "' onclick='selectColor(this)'></span>";
                             }
                         } else {
                             echo "<span class='color-swatch' style='background-color: gray;' title='Invalid colors data.'></span>"; // Handle invalid JSON format
@@ -90,7 +94,7 @@ $conn->close();
                         <?php
                         foreach ($sizes as $size) {
                             $quantity = $size_quantities[$size]; // Use the quantity for the specific size
-                            echo "<div class='size-circle' title='$size'>
+                            echo "<div class='size-circle' title='$size' onclick='selectSize(this, \"$size\")'>
                                     $size
                                   </div>
                                   <span class='quantity'>($quantity left)</span>";
@@ -99,10 +103,18 @@ $conn->close();
                     </div>
                 </div>
 
-                <!-- Add to Cart Button -->
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart(<?php echo $product_id; ?>)">
+                    <img src="../../icons/cart.png" alt="Cart Icon" style="width: 20px; height: 20px; vertical-align: top; margin-right: 5px;">
+                    Add to Cart
+                </button>
+                <button class="add-to-wishlist" onclick="addToWishlist(<?php echo $product_id; ?>)">
+                    <img src="../../icons/heart.png" alt="Wishlist Icon" style="width: 20px; height: 20px; vertical-align: top; margin-right: 5px;">
+                    Add to Wishlist
+                </button>
+
             </div>
         </div>
     </div>
+    <script src="product_details.js"></script>
 </body>
 </html>

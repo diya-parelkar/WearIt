@@ -37,7 +37,10 @@
             $isvalid = password_verify($pw, $results[0]);
             if($isvalid)
             {
-                echo "Welcome ". $user;
+                $_SESSION['user_name'] = $user;
+                header('Refresh: 3; url= ../homepage/homepage.php');
+                echo "Please wait until we redirect";
+                exit();
             }
             else
             {

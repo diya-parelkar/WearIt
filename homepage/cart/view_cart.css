@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cart-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+td img {
+    width: 60px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+
+button {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d62828;
+}
+
+button:active {
+    background-color: #c12727;
+}
+
+h3 {
+    text-align: right;
+    color: #333;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+button[onclick*="checkout.php"] {
+    background-color: #2a9d8f;
+    margin-top: 20px;
+    display: block;
+    width: 40%;
+    font-size: 1.1em;
+    padding: 10px 0;
+}
+
+button[onclick*="checkout.php"]:hover {
+    background-color: #219a82;
+}
