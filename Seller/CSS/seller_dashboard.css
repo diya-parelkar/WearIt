@@ -1,0 +1,130 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0f7fa; /* Colored background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 30px;
+    padding-top: 80px; /* Adjust based on the navbar height */
+}
+
+.container {
+    background: #ffffff; /* White container */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 100%; /* Restrict the container's width to allow background visibility */
+    margin: auto;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #00796b;
+}
+
+/* Table Styles */
+table {
+    border: 3px solid #00796b;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    overflow-x: auto;
+    table-layout: auto;
+}
+
+th, td {
+    border: 1px solid #00796b;
+    padding: 10px 7px;
+    text-align: center;
+}
+
+th {
+    border: 1px solid #5f9a93;
+
+    background-color: #00796b;
+    color: white;
+    font-size: large;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f8f6;
+}
+
+tr:hover {
+    background-color: #e0f2f1;
+}
+
+/* Button Styles */
+button, .button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button:hover, .button:hover {
+    background-color: #0056b3;
+}
+
+/* Custom Styles for Edit and Delete Buttons */
+.edit-button {
+    background-color: #4caf50; /* Green */
+    padding: 8px 16px;
+    margin-right: 5px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red */
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #388e3c;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Additional Button Styles */
+.add-product-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.description-col {
+    max-width: 150px; /* Set a maximum width */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow text */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button, .button, .edit-button, .delete-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

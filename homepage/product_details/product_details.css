@@ -1,0 +1,141 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0f7fa; /* Colored background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed from height to min-height */
+    margin: 0;
+    padding-top: 40px; /* Removed padding to avoid excess space */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.container {
+    background: #ffffff; /* White container */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 80%; /* Set a max width to limit how wide it can grow */
+    max-height: 80vh; /* Limit the height to avoid overflow */
+    margin: auto;
+}
+
+.product-detail-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Align items at the start */
+    justify-content: flex-start; /* Align items at the start */
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 80vh; /* Limit image height to keep it within the viewport */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.product-info {
+    margin-left: 20px; /* Increased space for better separation */
+    padding-left: 30px;
+    max-height: 80vh; /* Ensure product info doesn’t cause overflow */
+    overflow-y: auto; /* Allow scrolling within the info if needed */
+}
+
+/* Update heading styles */
+strong {
+    color: #837979; /* Grey color for headings */
+}
+
+.title{
+    color: black;
+    font-size: xx-large;
+}
+
+/* Price Style */
+.product-price {
+    font-size: 24px; /* Make price larger */
+    font-weight: bold; /* Bold font for emphasis */
+    color: #00796b; /* Darker color for contrast */
+}
+
+/* Size Circles */
+.size-options {
+    margin-top: 20px;
+}
+
+.size-circles {
+    display: flex;
+    gap: 15px; /* Space between circles */
+    align-items: center; /* Center circles vertically */
+}
+
+.size-circle {
+    width: 50px; /* Size of the circle */
+    height: 50px; /* Size of the circle */
+    border-radius: 50%; /* Make it circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white; /* Text color */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+    background-color: #00796b; /* Default color */
+}
+
+/* Hover effect for size circles */
+.size-circle:hover {
+    opacity: 0.8; /* Slightly fade on hover */
+}
+
+/* Quantity below the circles */
+.quantity {
+    display: block; /* Make it a block element */
+    font-size: 12px; /* Smaller font size for quantity */
+    margin-top: 10px; /* Space between circle and quantity */
+    text-align: center; /* Center align the quantity text */
+    color: #5f9a93;
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    margin-top: 30px;
+    padding: 16px 70px;
+    background-color: #007BFF; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+    font-size: large;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Available Colors Swatches */
+.available-colors {
+    margin-top: 20px;
+}
+
+.color-swatches {
+    display: flex;
+    gap: 10px; /* Space between swatches */
+    margin-top: 5px; /* Space between label and swatches */
+}
+
+.color-swatch {
+    width: 30px; /* Width of the swatch */
+    height: 30px; /* Height of the swatch */
+    border-radius: 50%; /* Make them circular */
+    display: inline-block; /* Ensure they display inline */
+    cursor: pointer; /* Pointer cursor on hover */
+    border: 2px solid #fff; /* Optional: white border for contrast */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: slight shadow for depth */
+    transition: transform 0.2s; /* Smooth transition for scaling */
+}
+
+.color-swatch:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}

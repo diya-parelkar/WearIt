@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <link rel="stylesheet" href="CSS/add_product.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Form</h1>
+        <form action="PHP/add_product.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+            </div>
+            <div class="form-group">
+                <label for="seller-name">Seller Name:</label>
+                <input type="text" id="seller-name" name="seller_name" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="womens_apparel">Women's Apparel</option>
+                    <option value="mens_apparel">Men's Apparel</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="kids_apparel">Kid's Apparel</option>
+                    <option value="shoes">Shoes</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="total-quantity">Total Quantity:</label>
+                <input type="number" id="total-quantity" name="total_quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="s-quantity">Small Quantity:</label>
+                <input type="number" id="s-quantity" name="S_quantity">
+            </div>
+            <div class="form-group">
+                <label for="m-quantity">Medium Quantity:</label>
+                <input type="number" id="m-quantity" name="M_quantity">
+            </div>
+            <div class="form-group">
+                <label for="l-quantity">Large Quantity:</label>
+                <input type="number" id="l-quantity" name="L_quantity">
+            </div>
+            <div class="form-group">
+                <label for="xl-quantity">Extra Large Quantity:</label>
+                <input type="number" id="xl-quantity" name="XL_quantity">
+            </div>
+            <div class="form-group">
+                <label for="colors">Colors (comma-separated):</label>
+                <input type="text" id="colors" name="colors" placeholder="e.g., Red, Blue, Green">
+                <small>Enter colors separated by commas</small>
+            </div>
+            <div class="form-group">
+                <label for="image">Product Image:</label>
+                <input type="file" id="image" name="image" placeholder="image" accept="image/*" required>
+            </div>
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
